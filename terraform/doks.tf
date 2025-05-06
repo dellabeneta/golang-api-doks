@@ -4,6 +4,7 @@ resource "digitalocean_kubernetes_cluster" "doks" {
   region   = var.doks_region
   version  = var.doks_version
   vpc_uuid = digitalocean_vpc.vpc-doks.id
+  registry_integration = true
 
   node_pool {
     name       = "golang-api-pool"
